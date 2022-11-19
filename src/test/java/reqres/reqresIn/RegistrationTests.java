@@ -8,8 +8,7 @@ import reqres.models.RegistrationResponse;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static reqres.specs.RegistrationSpecs.registrationRequestSpec;
-import static reqres.specs.RegistrationSpecs.registrationResponseSpec;
+import static reqres.specs.RegistrationSpecs.*;
 import static reqres.specs.SingleUserSpecs.errorResponseSpec2;
 
 
@@ -47,7 +46,7 @@ public class RegistrationTests {
                 .when()
                 .post()
                 .then()
-                .spec(errorResponseSpec2)
+                .spec(errorResponseSpec)
                 .extract()
                 .as(ErrorResponse.class);
 
@@ -66,7 +65,7 @@ public class RegistrationTests {
                 .when()
                 .post()
                 .then()
-                .spec(errorResponseSpec2)
+                .spec(errorResponseSpec)
                 .extract()
                 .as(ErrorResponse.class);
 
@@ -86,7 +85,7 @@ public class RegistrationTests {
                 .when()
                 .post()
                 .then()
-                .spec(errorResponseSpec2)
+                .spec(errorResponseSpec)
                 .extract()
                 .as(ErrorResponse.class);
 
